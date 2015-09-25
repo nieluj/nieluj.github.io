@@ -3541,7 +3541,7 @@ a cleaner decompilation:</p>
 being decrypted in function of the content of the previously decrypted block.</p>
 </div>
 <div class="paragraph">
-<p>This function can be rewritten in Ruby as below (full code: <a href="../level_11/cryptograph.rb">cryptograph.rb</a>):</p>
+<p>This function can be rewritten in Ruby as below (full code: <a href="cryptograph.rb">cryptograph.rb</a>):</p>
 </div>
 <div class="listingblock">
 <div class="title">cryptograph.rb</div>
@@ -3550,8 +3550,8 @@ being decrypted in function of the content of the previously decrypted block.</p
   <span class="tok-k">def</span> <span class="tok-nf">decrypt_blocks</span><span class="tok-p">(</span><span class="tok-n">count</span> <span class="tok-o">=</span> <span class="tok-mi">31</span><span class="tok-p">)</span>
     <span class="tok-vi">@init_message</span><span class="tok-o">[</span><span class="tok-mi">0</span><span class="tok-o">]</span> <span class="tok-o">|=</span> <span class="tok-mi">205</span>
 
-    <span class="tok-n">key</span> <span class="tok-o">=</span> <span class="tok-vi">@init_key</span>
-    <span class="tok-n">message</span> <span class="tok-o">=</span> <span class="tok-vi">@init_message</span><span class="tok-o">.</span><span class="tok-n">pack</span><span class="tok-p">(</span><span class="tok-s1">&#39;C*&#39;</span><span class="tok-p">)</span>
+    <span class="tok-n">key</span> <span class="tok-o">=</span> <span class="tok-vi">@init_key</span> <span class="tok-c1"># res 120 data, xored</span>
+    <span class="tok-n">message</span> <span class="tok-o">=</span> <span class="tok-vi">@init_message</span><span class="tok-o">.</span><span class="tok-n">pack</span><span class="tok-p">(</span><span class="tok-s1">&#39;C*&#39;</span><span class="tok-p">)</span> <span class="tok-c1"># res 121 data, at offset 16</span>
     <span class="tok-n">rc5_iter</span> <span class="tok-o">=</span> <span class="tok-mi">1</span>
 
     <span class="tok-p">(</span><span class="tok-mi">0</span><span class="tok-o">.</span><span class="tok-n">.count</span><span class="tok-p">)</span><span class="tok-o">.</span><span class="tok-n">each</span> <span class="tok-k">do</span> <span class="tok-o">|</span><span class="tok-n">b_idx</span><span class="tok-o">|</span>

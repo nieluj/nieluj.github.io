@@ -1,7 +1,5 @@
 #!/usr/bin/env ruby
 
-#require 'metasm'
-#include Metasm
 require 'digest'
 
 module Utils
@@ -333,8 +331,8 @@ class CryptoGraph
   def decrypt_blocks(count = 31)
     @init_message[0] |= 205
 
-    key = @init_key
-    message = @init_message.pack('C*')
+    key = @init_key # res 120 data, xored
+    message = @init_message.pack('C*') # res 121 data, at offset 16
     rc5_iter = 1
 
     (0..count).each do |b_idx|
