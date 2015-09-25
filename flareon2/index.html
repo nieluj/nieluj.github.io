@@ -2159,15 +2159,15 @@ of the RC4 algorithm:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="irb"><span class="tok-go">2.1.5 :001 &gt; require &#39;rc4&#39;</span>
+<pre class="pygments highlight"><code data-lang="irb"><span class="tok-gp">irb(main):001:0&gt; </span><span class="tok-nb">require</span> <span class="tok-s1">&#39;rc4&#39;</span>
 <span class="tok-go"> =&gt; true</span>
-<span class="tok-go">2.1.5 :002 &gt; key = &quot;flarebearstare&quot;</span>
+<span class="tok-gp">irb(main):002:0&gt; </span><span class="tok-n">key</span> <span class="tok-o">=</span> <span class="tok-s2">&quot;flarebearstare&quot;</span>
 <span class="tok-go"> =&gt; &quot;flarebearstare&quot;</span>
-<span class="tok-go">2.1.5 :003 &gt; dec = RC4.new(key)</span>
+<span class="tok-gp">irb(main):003:0&gt; </span><span class="tok-n">dec</span> <span class="tok-o">=</span> <span class="tok-no">RC4</span><span class="tok-o">.</span><span class="tok-n">new</span><span class="tok-p">(</span><span class="tok-n">key</span><span class="tok-p">)</span>
 <span class="tok-go"> =&gt; #&lt;RC4:0x00000002017b90 @q2=0, @q1=0, @key=[102, 108, [...], 112, 34]&gt;</span>
-<span class="tok-go">2.1.5 :005 &gt; data = &quot;96d587b8139933d17e3598505e729da736bb66aa6cfa5180289fb6845530&quot;.scan(/../).map {|x| x.to_i(16)}.pack(&#39;C*&#39;)</span>
+<span class="tok-gp">irb(main):004:0&gt; </span><span class="tok-n">data</span> <span class="tok-o">=</span> <span class="tok-s2">&quot;96d587b8139933d17e3598505e729da736bb66aa6cfa5180289fb6845530&quot;</span><span class="tok-o">.</span><span class="tok-n">scan</span><span class="tok-p">(</span><span class="tok-sr">/../</span><span class="tok-p">)</span><span class="tok-o">.</span><span class="tok-n">map</span> <span class="tok-p">{</span><span class="tok-o">|</span><span class="tok-n">x</span><span class="tok-o">|</span> <span class="tok-n">x</span><span class="tok-o">.</span><span class="tok-n">to_i</span><span class="tok-p">(</span><span class="tok-mi">16</span><span class="tok-p">)}</span><span class="tok-o">.</span><span class="tok-n">pack</span><span class="tok-p">(</span><span class="tok-s1">&#39;C*&#39;</span><span class="tok-p">)</span>
 <span class="tok-go"> =&gt; &quot;\x96\xD5\x87\xB8\x13\x993\xD1~5\x98P^r\x9D\xA76\xBBf\xAAl\xFAQ\x80(\x9F\xB6\x84U0&quot;</span>
-<span class="tok-go">2.1.5 :006 &gt; dec.decrypt(data)</span>
+<span class="tok-gp">irb(main):005:0&gt; </span><span class="tok-n">dec</span><span class="tok-o">.</span><span class="tok-n">decrypt</span><span class="tok-p">(</span><span class="tok-n">data</span><span class="tok-p">)</span>
 <span class="tok-go"> =&gt; &quot;_StartService(&quot;&quot;, &quot;challenge&quot;)&quot;</span></code></pre>
 </div>
 </div>
@@ -2390,7 +2390,7 @@ would be:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="irb"><span class="tok-go">2.1.5 :001 &gt; 0x22E0DC - 0x22E004</span>
+<pre class="pygments highlight"><code data-lang="irb"><span class="tok-gp">irb(main):001:0&gt; </span><span class="tok-mh">0x22E0DC</span> <span class="tok-o">-</span> <span class="tok-mh">0x22E004</span>
 <span class="tok-go"> =&gt; 216</span></code></pre>
 </div>
 </div>
@@ -2472,7 +2472,7 @@ switch-case can be computed as below:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="irb"><span class="tok-go">2.1.5 :001 &gt; 0x22E068 - 0x22E004</span>
+<pre class="pygments highlight"><code data-lang="irb"><span class="tok-gp">irb(main):001:0&gt; </span><span class="tok-mh">0x22E068</span> <span class="tok-o">-</span> <span class="tok-mh">0x22E004</span>
 <span class="tok-go"> =&gt; 100</span></code></pre>
 </div>
 </div>
@@ -2784,7 +2784,7 @@ the negative value of the constant <code>Q</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="irb"><span class="tok-go">2.1.5 :001 &gt; &quot;%x&quot; % (-0x9e3779b9 &amp; 0xFFFFFFFF)</span>
+<pre class="pygments highlight"><code data-lang="irb"><span class="tok-gp">irb(main):001:0&gt; </span><span class="tok-s2">&quot;%x&quot;</span> <span class="tok-o">%</span> <span class="tok-p">(</span><span class="tok-o">-</span><span class="tok-mh">0x9e3779b9</span> <span class="tok-o">&amp;</span> <span class="tok-mh">0xFFFFFFFF</span><span class="tok-p">)</span>
 <span class="tok-go"> =&gt; &quot;61c88647&quot;</span></code></pre>
 </div>
 </div>
@@ -3395,11 +3395,11 @@ by setting by following the instructions at <a href="https://msdn.microsoft.com/
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="irb"><span class="tok-go">2.2.1 :001 &gt; s = &quot;00 00 00 00 00 00 01 00 39 6C 1A DA B5 01 08 02 B0 54 48 92 F0 0F B7 D3 71 C9 80 74 B9 A2 22 29&quot;</span>
+<pre class="pygments highlight"><code data-lang="irb"><span class="tok-gp">irb(main):001:0&gt; </span><span class="tok-n">s</span> <span class="tok-o">=</span> <span class="tok-s2">&quot;00 00 00 00 00 00 01 00 39 6C 1A DA B5 01 08 02 B0 54 48 92 F0 0F B7 D3 71 C9 80 74 B9 A2 22 29&quot;</span>
 <span class="tok-go"> =&gt; &quot;00 00 00 00 00 00 01 00 39 6C 1A DA B5 01 08 02 B0 54 48 92 F0 0F B7 D3 71 C9 80 74 B9 A2 22 29&quot;</span>
-<span class="tok-go">2.2.1 :002 &gt; require &#39;digest&#39;</span>
+<span class="tok-gp">irb(main):002:0&gt; </span><span class="tok-nb">require</span> <span class="tok-s1">&#39;digest&#39;</span>
 <span class="tok-go"> =&gt; true</span>
-<span class="tok-go">2.2.1 :003 &gt; Digest::MD5.hexdigest( s.gsub(/\s+/, &#39;&#39;).scan(/../).map {|x| x.to_i(16)}.pack(&#39;C*&#39;) )</span>
+<span class="tok-gp">irb(main):003:0&gt; </span><span class="tok-no">Digest</span><span class="tok-o">::</span><span class="tok-no">MD5</span><span class="tok-o">.</span><span class="tok-n">hexdigest</span><span class="tok-p">(</span> <span class="tok-n">s</span><span class="tok-o">.</span><span class="tok-n">gsub</span><span class="tok-p">(</span><span class="tok-sr">/\s+/</span><span class="tok-p">,</span> <span class="tok-s1">&#39;&#39;</span><span class="tok-p">)</span><span class="tok-o">.</span><span class="tok-n">scan</span><span class="tok-p">(</span><span class="tok-sr">/../</span><span class="tok-p">)</span><span class="tok-o">.</span><span class="tok-n">map</span> <span class="tok-p">{</span><span class="tok-o">|</span><span class="tok-n">x</span><span class="tok-o">|</span> <span class="tok-n">x</span><span class="tok-o">.</span><span class="tok-n">to_i</span><span class="tok-p">(</span><span class="tok-mi">16</span><span class="tok-p">)}</span><span class="tok-o">.</span><span class="tok-n">pack</span><span class="tok-p">(</span><span class="tok-s1">&#39;C*&#39;</span><span class="tok-p">)</span> <span class="tok-p">)</span>
 <span class="tok-go"> =&gt; &quot;88d48c0cae734f5b57d8e3cc8c711759&quot;</span></code></pre>
 </div>
 </div>
@@ -3707,7 +3707,7 @@ function exits prematurely if the result is equal to 0.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="irb"><span class="tok-go">2.2.1 :001 &gt; (0x8000 &lt;&lt; 9) &gt;&gt; 24</span>
+<pre class="pygments highlight"><code data-lang="irb"><span class="tok-gp">irb(main):001:0&gt; </span><span class="tok-p">(</span><span class="tok-mh">0x8000</span> <span class="tok-o">&lt;&lt;</span> <span class="tok-mi">9</span><span class="tok-p">)</span> <span class="tok-o">&gt;&gt;</span> <span class="tok-mi">24</span>
 <span class="tok-go"> =&gt; 1</span></code></pre>
 </div>
 </div>
@@ -3722,7 +3722,7 @@ function exits prematurely if the result is equal to 0.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="ruby"><span class="tok-mi">2</span><span class="tok-o">.</span><span class="tok-mi">2</span><span class="tok-o">.</span><span class="tok-mi">1</span> <span class="tok-p">:</span><span class="tok-mo">004</span> <span class="tok-o">&gt;</span> <span class="tok-p">(</span><span class="tok-mh">0x8000</span> <span class="tok-o">&lt;&lt;</span> <span class="tok-mi">11</span><span class="tok-p">)</span> <span class="tok-o">&gt;&gt;</span> <span class="tok-mi">26</span>
+<pre class="pygments highlight"><code data-lang="ruby"><span class="tok-n">irb</span><span class="tok-p">(</span><span class="tok-n">main</span><span class="tok-p">):</span><span class="tok-mo">004</span><span class="tok-p">:</span><span class="tok-mi">0</span><span class="tok-o">&gt;</span> <span class="tok-p">(</span><span class="tok-mh">0x8000</span> <span class="tok-o">&lt;&lt;</span> <span class="tok-mi">11</span><span class="tok-p">)</span> <span class="tok-o">&gt;&gt;</span> <span class="tok-mi">26</span>
  <span class="tok-o">=&gt;</span> <span class="tok-mi">1</span></code></pre>
 </div>
 </div>
