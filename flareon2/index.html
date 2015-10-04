@@ -496,7 +496,20 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_level_8">Level 8</a></li>
 <li><a href="#_level_9">Level 9</a></li>
 <li><a href="#_level_10">Level 10</a></li>
-<li><a href="#_level_11">Level 11</a></li>
+<li><a href="#_level_11">Level 11</a>
+<ul class="sectlevel2">
+<li><a href="#_cryptographic_algorithms">Cryptographic algorithms</a></li>
+<li><a href="#_top_down_analysis">Top-down analysis</a>
+<ul class="sectlevel3">
+<li><a href="#_function_decrypt_and_write_secret">Function decrypt_and_write_secret</a></li>
+<li><a href="#_function_decrypt_blocks">Function decrypt_blocks</a></li>
+<li><a href="#_function_write_secret">Function write_secret</a></li>
+</ul>
+</li>
+<li><a href="#_tl_dr_version">TL;DR version</a></li>
+<li><a href="#_cryptograph_rb">cryptograph.rb</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -3015,9 +3028,8 @@ After returning from this function, the program should print <code>The "secret.j
 <div class="paragraph">
 <p>Obvisouly, the next step is to take a look at the function <code>decrypt_and_write_secret</code>.</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_function_decrypt_and_write_secret">Function decrypt_and_write_secret</h3>
+<div class="sect3">
+<h4 id="_function_decrypt_and_write_secret">Function decrypt_and_write_secret</h4>
 <div class="paragraph">
 <p>The function starts by reading the contents of the resource number 120 into a buffer referenced by the register <code>esi</code>:</p>
 </div>
@@ -3045,8 +3057,8 @@ and the result is stored in the memory area pointed by <code>esi</code>.</p>
 <p>After returning, the function <code>sub_401CF0</code> (renamed <code>write_secret</code>) is called. This one is added to the backlog of functions for further analysis.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_function_decrypt_blocks">Function decrypt_blocks</h3>
+<div class="sect3">
+<h4 id="_function_decrypt_blocks">Function decrypt_blocks</h4>
 <div class="paragraph">
 <p>The callgraph of the function <code>decrypt_blocks</code> is shown below:</p>
 </div>
@@ -3636,8 +3648,8 @@ value is equal to <code>0x2000000</code>. Computing the key for the 11th block s
 was put aside before.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_function_write_secret">Function write_secret</h3>
+<div class="sect3">
+<h4 id="_function_write_secret">Function write_secret</h4>
 <div class="paragraph">
 <p>This function is called just after having decrypted all the blocks, as shown below:</p>
 </div>
@@ -3832,6 +3844,7 @@ The "secret.jpg" has been written to the current execution folder.</code></pre>
 <p><span class="image"><img src="images/level_11_secret.jpg" alt="level_11_secret"></span></p>
 </div>
 </div>
+</div>
 <div class="sect2">
 <h3 id="_tl_dr_version">TL;DR version</h3>
 <div class="paragraph">
@@ -3890,7 +3903,7 @@ write the <code>secret.jpg</code> file in the current directory.</p>
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2015-10-04 20:09:46 CEST
+Last updated 2015-10-04 20:12:39 CEST
 </div>
 </div>
 </body>
