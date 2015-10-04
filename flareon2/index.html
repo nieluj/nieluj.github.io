@@ -508,7 +508,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 of the Flare Challenge.</p>
 </div>
 <div class="paragraph">
-<p>Since the end of the context, a few other write-ups arose on the Internet:</p>
+<p>Since the end of the contest, a few other write-ups were published on the Internet:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -535,7 +535,7 @@ of the Flare Challenge.</p>
 <h2 id="_level_1">Level 1</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The first level of the challenge requires to analyze a file named <code>i_am_happy_you_are_to_playing_the_flareon_challenge.exe</code>.</p>
+<p>The first level of the challenge requires to examine a file named <code>i_am_happy_you_are_to_playing_the_flareon_challenge.exe</code>.</p>
 </div>
 <div class="paragraph">
 <p>When started, the program asks for a password and will print <code>You are failure</code>, as shown below:</p>
@@ -576,11 +576,11 @@ You are failure</code></pre>
 </div>
 <div class="paragraph">
 <p>The input string is stored at address <code>0x402158</code> and each byte is compared to a byte array at address <code>0x402140</code>,
-after being xor-ed with value <code>0x7d</code>.</p>
+after being xor-ed with the value <code>0x7d</code>.</p>
 </div>
 <div class="paragraph">
 <p>The ruby script below can be used to read the <code>0x18</code> bytes at address <code>0x402140</code> (offset <code>0x540</code> in the file),
-to apply a xor operation on each byte with value 0x7d and then return the expected string.</p>
+to apply a xor operation on each byte with the value 0x7d and then return the expected string.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -615,7 +615,7 @@ to apply a xor operation on each byte with value 0x7d and then return the expect
 <div class="paragraph">
 <p>This level requires to analyze the provided program, <code>very_success.exe</code>. At first,
 it looks quite similar to the previous level: when started, it asks for a password
-and then prints a message.</p>
+and then prints the same message.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -633,7 +633,7 @@ You are failure</code></pre>
 </div>
 <div class="paragraph">
 <p>Interestingly, this function pops the return address from the stack, which is equal to <code>0x4010E4</code>,
-and stores it in a local variable (renamed as <code>ref_data</code> in IDA) :</p>
+and stores it in a local variable (renamed <code>ref_data</code> in IDA) :</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/level_02_002.png" alt="level_02_002" width="800"></span></p>
@@ -761,10 +761,10 @@ to Python libraries can be found:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>At this point, you can google a few strings to figure what is going on but long
+<p>At this point, you can google a few strings to figure out what is going on, but long
 story short, this program was built using the PyInstaller tool which is
-used to embed into a big binary file all the dependencies required to run
-a Python script.</p>
+used to embed all the dependencies required to run
+a Python script into a big binary file.</p>
 </div>
 <div class="paragraph">
 <p>These dependencies can be extracted using <a href="http://sourceforge.net/projects/pyinstallerextractor/" class="bare">http://sourceforge.net/projects/pyinstallerextractor/</a> :</p>
@@ -781,7 +781,7 @@ is unstable and can crash although it is very fast.</code></pre>
 </div>
 <div class="paragraph">
 <p>Among the extracted resources, the <code>elfie</code> file looks interesting: it is a large obfuscated
-Python script (4MB, over 57K lines) which looks like below:</p>
+Python script (4MB, over 57K lines) which looks as shown below:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -795,8 +795,8 @@ Python script (4MB, over 57K lines) which looks like below:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Obtaining the decoded Python instructions to be executed only requires to replace
-the <code>exec</code> call by <code>print</code> and to redirect the standard output to a new file:</p>
+<p>Obtaining the decoded Python instructions to will be executed only requires
+the <code>exec</code> call to be replaced by <code>print</code> and that the standard output be redirected to a new file:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -804,7 +804,7 @@ the <code>exec</code> call by <code>print</code> and to redirect the standard ou
 </div>
 </div>
 <div class="paragraph">
-<p>The resulting Python file is still obfuscated but a method at line 13 looks interesting:</p>
+<p>The resulting Python file is still obfuscated, but a method at line 13 looks interesting:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -950,7 +950,7 @@ register.</p>
 </div>
 <div class="paragraph">
 <p>Further down, an index is computed from the value contained in <code>edi</code> and a string
-is referenced using this index. The string content is then decoded from base64.</p>
+is referenced using said index. The string content is then decoded from base64.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/level_04_008.png" alt="level_04_008"></span></p>
@@ -976,7 +976,7 @@ and then look for the digest corresponding to <code>md5_ref</code>:</p>
 <div class="paragraph">
 <p>To avoid a premature exit, the first argument of the program must be <code>17</code>. When
 debugging the program, it has been observed that this value matches the current
-hour obtained with the call to <code>_localtime64_s</code>. To sum it up, the program must be
+hour obtained with the call to <code>_localtime64_s</code>. To summarize, the program must be
 ran with the current hour as first argument.</p>
 </div>
 <div class="paragraph">
@@ -992,7 +992,7 @@ example, for value 17, we expect to find a string corresponding to :</p>
 </div>
 <div class="paragraph">
 <p>The same exact string cannot be found but a similar string with
-case swapped is present in the binary:</p>
+upper/lowercase swapped is present in the binary:</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/level_04_012.PNG" alt="level_04_012"></span></p>
@@ -1126,7 +1126,7 @@ the provided binary.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Four functions need then to be analyzed to understand the whole program: <code>sub_821250</code>,
+<p>Four functions then need to be analyzed to understand the whole program: <code>sub_821250</code>,
 <code>sub_821427</code>, <code>sub_8212A0</code> and <code>sub_821000</code>.</p>
 </div>
 <div class="paragraph">
@@ -1152,8 +1152,7 @@ the provided binary.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>It takes a string as input and will add to each byte the corresponding byte
-in the string <code>"flarebearstare"</code>.</p>
+<p>It takes a string as input and will add the corresponding byte in the string <code>"flarebearstare"</code> to each byte in the input string.</p>
 </div>
 <div class="paragraph">
 <p>The function <code>sub_821427</code> is used to allocate the specified amount of memory.</p>
@@ -1161,7 +1160,7 @@ in the string <code>"flarebearstare"</code>.</p>
 <div class="paragraph">
 <p>The function <code>sub_8212A0</code> implements a base64 encoding function. The encoding
 alphabet is constructed by storing 4 different 128 bits integers on the stack,
-using SSE instructions. As in the previous level, the alphabet used for encoding
+using SSE instructions. As with the previous level, the alphabet used for encoding
 is different than the regular base64 alphabet: lowercase letters have been swapped
 with the uppercase letters.</p>
 </div>
@@ -1202,7 +1201,7 @@ with the uppercase letters.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>To put it in a nutshell, the following steps are executed by the program:</p>
+<p>In a nutshell, the following steps are executed by the program:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -1276,7 +1275,7 @@ and obtain the content of the original <code>key.txt</code> file.</p>
 <h2 id="_level_6">Level 6</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Solving the level 6 requires to analyze an android application, <code>android.apk</code>.</p>
+<p>Solving the level 6 requires the analysis of an android application, <code>android.apk</code>.</p>
 </div>
 <div class="paragraph">
 <p>When started through an emulator, the application asks for a string to validate:</p>
@@ -1345,8 +1344,8 @@ native library, <code>libvalidate.so</code>:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>This function can be debugged remotely using IDA by pushing on the smartphone
-the <code>android_server</code> binary and starting it.</p>
+<p>This function can be debugged remotely using IDA by pushing
+the <code>android_server</code> binary on the smartphone and starting it.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1386,7 +1385,7 @@ will be hit when the user clicks on the <code>Validate</code> button in the appl
 <p><span class="image"><img src="images/level_06_004.png" alt="level_06_004"></span></p>
 </div>
 <div class="paragraph">
-<p>The function can be debugged step by step to facilitate its analyze. A few instructions below,
+<p>The function can be debugged step by step to facilitate its analysis. A few instructions below,
 the function <code>strlen</code> is called on the string entered through the application and
 the result is compared to 46. Hence, the application expects a string that is
 46 characters long.</p>
@@ -1515,7 +1514,7 @@ of them equal to 0:</p>
 </div>
 <div class="paragraph">
 <p>Next, the function starts a loop. At the beginning of each iteration, a word
-(variable <code>v9</code>) is set using two characters from the input string, from the current position. Then another
+(variable <code>v9</code>) is set using two characters of the input string, from the current position. Then another
 loop is started, with 3476 iterations at most. For each iteration, a word (variable
 <code>v16</code>) is looked up from an array at address <code>0x4B5D7214</code>. If the word <code>v9</code> can
 be divided by <code>v16</code>, then the value at <code>v[i_1]</code> is incremented. This inner loop
@@ -1708,14 +1707,14 @@ version of the binary compared to the original one.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Like the <code>smethod_2</code> seen previously, the output of this method will vary
+<p>As with the previously seen <code>smethod_2</code>, the output of this method will vary
 between the two versions of the binary, because of the call to <code>GetExecutingAssembly</code>.</p>
 </div>
 <div class="paragraph">
 <p>A few different methods can then be followed to recover the expected string. I chose
-to code a small program that will read the assembly from a specified file and then
-I modified slightly the methods <code>smethod_2</code> and <code>smethod_3</code> to operate on this assembly. The code
-of the program is presented below:</p>
+to code a small program that will read the assembly from a specified file,
+the methods <code>smethod_2</code> and <code>smethod_3</code> being slightly modified
+to operate on this assembly. The program source is presented below:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1867,7 +1866,7 @@ is encoded using steganographic techniques:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>With the schema <code>b1,rgb,msb,xy</code>, <code>zsteg</code> detects an embedded PE32 executable. This schema means
+<p>With the <code>b1,rgb,msb,xy</code> method, <code>zsteg</code> detects an embedded PE32 executable. This method means
 that the first bit of the red, green and blue components must be extracted and that the bitstream
 must be reconstructed starting by the most significant bit.</p>
 </div>
@@ -1976,7 +1975,7 @@ uses many anti-disassembly tricks, like <code>jump label+1</code>:</p>
 </div>
 <div class="paragraph">
 <p>A full static analysis does not feel like the right approach here. Even debugging is made difficult
-because of the presence of many junk instructions.</p>
+because of the presence of numerous junk instructions.</p>
 </div>
 <div class="paragraph">
 <p>Using OllyDbg, it is possible to record a trace showing the executed instructions and the memory
@@ -2028,7 +2027,7 @@ to obtain the expected value of <code>AL = ROR(BL, CL) ^ AH</code>, being given 
 from the recorded trace.</p>
 </div>
 <div class="paragraph">
-<p>The Ruby script below extract the values of the registers <code>BL</code>, <code>AH</code> and <code>CL</code> for each iteration
+<p>The Ruby script below extracts the values of the registers <code>BL</code>, <code>AH</code> and <code>CL</code> for each iteration
 and computes the expected value for <code>AL</code>:</p>
 </div>
 <div class="listingblock">
@@ -2191,7 +2190,7 @@ and executes the program <code>ioctl.exe</code> with <code>22E0DC</code> as para
 </div>
 <div class="paragraph">
 <p>The file <code>challenge.sys</code> and <code>ioctl.exe</code> are indeed present on the filesystem
-but running the later with the given parameter does not return any result:</p>
+but running the latter with the given parameter does not return any result:</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/level_10_006.png" alt="level_10_006"></span></p>
@@ -2336,7 +2335,7 @@ at location <code>sub_29CC90</code>:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The driver dispatch function seems to be <code>sub_29C1A0</code> (renamed to <code>driver_dispatch</code> for the rest of this analysis) and can
+<p>The driver dispatch function seems to be <code>sub_29C1A0</code> (renamed <code>driver_dispatch</code> for the rest of this analysis) and can
 also be decompiled :</p>
 </div>
 <div class="listingblock">
@@ -2402,7 +2401,7 @@ would be:</p>
 </div>
 <div class="paragraph">
 <p>This function starts by clearing a 24-bytes buffer on the stack. Then, on the first 21 bytes, each bit position
-is tested with a <code>and</code> instruction, with the operand <code>1</code> to <code>0x80</code>. If the next instruction is
+is tested with an <code>and</code> instruction, with the operand <code>1</code> to <code>0x80</code>. If the next instruction is
 <code>jz</code>, the bit needs to be cleared to avoid a premature exit. If the next instruction is <code>jnz</code>, the bits needs
 to be set.</p>
 </div>
@@ -2467,7 +2466,7 @@ implements these operations that can be tedious when done manually.</p>
 </div>
 <div class="paragraph">
 <p>Unfortunately, the string obtained is not the validation email address
-but an indication to try another ioctl. As previously, the index to the
+but an indication to try another ioctl. As shown previously, the index to the
 switch-case can be computed as below:</p>
 </div>
 <div class="listingblock">
@@ -2565,7 +2564,7 @@ the crypted data length, is not modified by the function and is equal to <code>0
 <p><span class="image"><img src="images/level_10_014.png" alt="level_10_014"></span></p>
 </div>
 <div class="paragraph">
-<p>Similary, the stack variables used as decryption key are kept unmodified since the beginning
+<p>Similary, the stack variables used as decryption key are kept unmodified from the beginning
 of the function:</p>
 </div>
 <div class="paragraph">
@@ -2589,7 +2588,7 @@ we already know that the size of this buffer is <code>0x28 (40)</code> bytes.</p
 <div class="paragraph">
 <p>One way of obtaining the data to decrypt is to start a kernel debugger and set
 up a breakpoint before calling the decryption function. Unfortunately, the buffer
-seems still initialized to zero:</p>
+still seems initialized to zero:</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/level_10_018.png" alt="level_10_018"></span></p>
@@ -2709,7 +2708,7 @@ to an instruction at the end of a sub-function that modifies the value of the by
 <p>For this level, FireEye provides a new Win32 PE to analyze named <code>CryptoGraph.exe</code>.</p>
 </div>
 <div class="paragraph">
-<p>The program needs at least one argument to run. In that case, it loops forever and does not return:</p>
+<p>The program needs at least one argument to run. With just one argument, it loops forever and does not return:</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/level_11_001.png" alt="level_11_001"></span></p>
@@ -3002,15 +3001,23 @@ be decompiled cleanly by IDA and is shown below:</p>
 </div>
 <div class="paragraph">
 <p>A handle is opened on the file <code>secret.jpg</code>, the first argument is converted to
-an integer and the function <code>sub_401910</code> is called with these two values as parameters.
+an integer and the function <code>sub_401910</code> (renamed <code>decrypt_and_write_secret</code> during the analysis) is called with these two values as parameters.
 After returning from this function, the program should print <code>The "secret.jpg" has been written to the current execution folder</code>.</p>
 </div>
 <div class="paragraph">
-<p>Obvisouly, the next step is to take a look at this function.</p>
+<p>The callgraph from the <code>main</code> function is shown below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/main_l2.svg" alt="main l2">
+</div>
+</div>
+<div class="paragraph">
+<p>Obvisouly, the next step is to take a look at the function <code>decrypt_and_write_secret</code>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_function_sub_401910_decrypt_and_write_secret">Function sub_401910 (decrypt_and_write_secret)</h3>
+<h3 id="_function_decrypt_and_write_secret">Function decrypt_and_write_secret</h3>
 <div class="paragraph">
 <p>The function starts by reading the contents of the resource number 120 into a buffer referenced by the register <code>esi</code>:</p>
 </div>
@@ -3029,19 +3036,27 @@ is divided into 3 arrays of 16 bytes, each one stored in a xmmword (128-bits). F
 and the result is stored in the memory area pointed by <code>esi</code>.</p>
 </div>
 <div class="paragraph">
-<p>After that, the function <code>sub_4015D0</code> is called as shown on the screenshot below:</p>
+<p>After that, the function <code>sub_4015D0</code> (renamed <code>decrypt_blocks</code>) is called as shown on the screenshot below:</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/level_11_010.png" alt="level_11_010"></span></p>
 </div>
 <div class="paragraph">
-<p>After returning, the function <code>sub_401CF0</code> is called. This one is added to the backlog of functions for further analysis.</p>
+<p>After returning, the function <code>sub_401CF0</code> (renamed <code>write_secret</code>) is called. This one is added to the backlog of functions for further analysis.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_function_sub_4015d0_decrypt_blocks">Function sub_4015D0 (decrypt_blocks)</h3>
+<h3 id="_function_decrypt_blocks">Function decrypt_blocks</h3>
 <div class="paragraph">
-<p>First, the function sub_401000 is called with <code>res_121_data</code> as argument.</p>
+<p>The callgraph of the function <code>decrypt_blocks</code> is shown below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/decrypt_blocks_l2.svg" alt="decrypt blocks l2">
+</div>
+</div>
+<div class="paragraph">
+<p>First, the function sub_401000 (renamed <code>check_res_121_data</code>) is called with <code>res_121_data</code> as argument.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/level_11_015.png" alt="level_11_015"></span></p>
@@ -3051,7 +3066,7 @@ and the result is stored in the memory area pointed by <code>esi</code>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="c"><span class="lineno"> 1</span> <span class="tok-kt">char</span> <span class="tok-n">__thiscall</span> <span class="tok-nf">sub_401000</span><span class="tok-p">(</span><span class="tok-kt">char</span> <span class="tok-o">*</span><span class="tok-n">res_121_data</span><span class="tok-p">)</span>
+<pre class="pygments highlight"><code data-lang="c"><span class="lineno"> 1</span> <span class="tok-kt">char</span> <span class="tok-n">__thiscall</span> <span class="tok-nf">check_res_121_data</span><span class="tok-p">(</span><span class="tok-kt">char</span> <span class="tok-o">*</span><span class="tok-n">res_121_data</span><span class="tok-p">)</span>
 <span class="lineno"> 2</span> <span class="tok-p">{</span>
 <span class="lineno"> 3</span>   <span class="tok-kt">char</span> <span class="tok-o">*</span><span class="tok-n">res_121_data_</span><span class="tok-p">;</span> <span class="tok-c1">// esi@1</span>
 <span class="lineno"> 4</span>   <span class="tok-n">_DWORD</span> <span class="tok-o">*</span><span class="tok-n">ref_md5</span><span class="tok-p">;</span> <span class="tok-c1">// edx@3</span>
@@ -3088,15 +3103,14 @@ and the result is stored in the memory area pointed by <code>esi</code>.</p>
 <div class="paragraph">
 <p>This gives us a few indications on the content of the resource 121. The first 8 bytes must be equal to
 the string <code>FLARE-ON</code>. Starting from offset 48, <code>0x600</code> bytes are hashed through the MD5 algorithm. The
-resulting digest is compared to a reference digest at offset 32. This function is renamed to <code>check_res_121_data</code>
-for later references.</p>
+resulting digest is compared to a reference digest at offset 32.</p>
 </div>
 <div class="paragraph">
-<p>Back to <code>sub_4015D0</code>, the beginning of the decompilation is shown below:</p>
+<p>Back to the function  <code>decrypt_blocks</code>, the beginning of the decompilation is shown below:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="c"><span class="lineno"> 1</span> <span class="tok-kt">int</span> <span class="tok-kr">__fastcall</span> <span class="tok-nf">sub_4015D0</span><span class="tok-p">(</span><span class="tok-kt">void</span> <span class="tok-o">*</span><span class="tok-n">ctx</span><span class="tok-p">,</span> <span class="tok-kt">int</span> <span class="tok-n">unused</span><span class="tok-p">,</span> <span class="tok-kt">char</span> <span class="tok-n">first_arg</span><span class="tok-p">,</span> <span class="tok-kt">void</span> <span class="tok-o">*</span><span class="tok-n">res_120_xor</span><span class="tok-p">,</span> <span class="tok-kt">int</span> <span class="tok-n">unused_1</span><span class="tok-p">,</span> <span class="tok-kt">void</span> <span class="tok-o">*</span><span class="tok-n">res_121_data</span><span class="tok-p">,</span> <span class="tok-kt">int</span> <span class="tok-n">unused_2</span><span class="tok-p">)</span>
+<pre class="pygments highlight"><code data-lang="c"><span class="lineno"> 1</span> <span class="tok-kt">int</span> <span class="tok-kr">__fastcall</span> <span class="tok-nf">decrypt_blocks</span><span class="tok-p">(</span><span class="tok-kt">void</span> <span class="tok-o">*</span><span class="tok-n">ctx</span><span class="tok-p">,</span> <span class="tok-kt">int</span> <span class="tok-n">unused</span><span class="tok-p">,</span> <span class="tok-kt">char</span> <span class="tok-n">first_arg</span><span class="tok-p">,</span> <span class="tok-kt">void</span> <span class="tok-o">*</span><span class="tok-n">res_120_xor</span><span class="tok-p">,</span> <span class="tok-kt">int</span> <span class="tok-n">unused_1</span><span class="tok-p">,</span> <span class="tok-kt">void</span> <span class="tok-o">*</span><span class="tok-n">res_121_data</span><span class="tok-p">,</span> <span class="tok-kt">int</span> <span class="tok-n">unused_2</span><span class="tok-p">)</span>
 <span class="lineno"> 2</span> <span class="tok-p">{</span>
 <span class="lineno"> 3</span>   <span class="tok-p">[...]</span>
 <span class="lineno"> 4</span>   <span class="tok-n">v7</span> <span class="tok-o">=</span> <span class="tok-mi">0</span><span class="tok-p">;</span>
@@ -3159,7 +3173,7 @@ for later references.</p>
 content of resource 121 is copied to <code>ctx + 8</code>. From the previous analysis
 of the <code>check_res_121_data</code> function, we obtained a few indications on
 the meaning of this data. Furthermore, by examining the way the <code>ctx</code> pointer
-is accessed through, its structure can be guessed. For example, a block
+is accessed, its structure can be guessed. For example, a block
 of 48 bytes is decrypted by the RC5 algorithm at offset 56.</p>
 </div>
 <div class="paragraph">
@@ -3196,7 +3210,7 @@ and applying this definition to the <code>ctx</code> pointer:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="c"><span class="lineno"> 1</span> <span class="tok-kt">int</span> <span class="tok-kr">__fastcall</span> <span class="tok-nf">sub_4015D0</span><span class="tok-p">(</span><span class="tok-kt">void</span> <span class="tok-o">*</span><span class="tok-n">ctx</span><span class="tok-p">,</span> <span class="tok-kt">int</span> <span class="tok-n">unused</span><span class="tok-p">,</span> <span class="tok-kt">char</span> <span class="tok-n">first_arg</span><span class="tok-p">,</span> <span class="tok-kt">void</span> <span class="tok-o">*</span><span class="tok-n">res_120_xor</span><span class="tok-p">,</span> <span class="tok-kt">int</span> <span class="tok-n">unused_1</span><span class="tok-p">,</span> <span class="tok-kt">void</span> <span class="tok-o">*</span><span class="tok-n">res_121_data</span><span class="tok-p">,</span> <span class="tok-kt">int</span> <span class="tok-n">unused_2</span><span class="tok-p">)</span>
+<pre class="pygments highlight"><code data-lang="c"><span class="lineno"> 1</span> <span class="tok-kt">int</span> <span class="tok-kr">__fastcall</span> <span class="tok-nf">decrypt_blocks</span><span class="tok-p">(</span><span class="tok-kt">void</span> <span class="tok-o">*</span><span class="tok-n">ctx</span><span class="tok-p">,</span> <span class="tok-kt">int</span> <span class="tok-n">unused</span><span class="tok-p">,</span> <span class="tok-kt">char</span> <span class="tok-n">first_arg</span><span class="tok-p">,</span> <span class="tok-kt">void</span> <span class="tok-o">*</span><span class="tok-n">res_120_xor</span><span class="tok-p">,</span> <span class="tok-kt">int</span> <span class="tok-n">unused_1</span><span class="tok-p">,</span> <span class="tok-kt">void</span> <span class="tok-o">*</span><span class="tok-n">res_121_data</span><span class="tok-p">,</span> <span class="tok-kt">int</span> <span class="tok-n">unused_2</span><span class="tok-p">)</span>
 <span class="lineno"> 2</span>   <span class="tok-p">[...]</span>
 <span class="lineno"> 3</span>   <span class="tok-n">memcpy_s</span><span class="tok-p">(</span><span class="tok-n">ctx_</span><span class="tok-o">-&gt;</span><span class="tok-n">str_1</span><span class="tok-p">,</span> <span class="tok-mh">0x630u</span><span class="tok-p">,</span> <span class="tok-n">res_121_data</span><span class="tok-p">,</span> <span class="tok-mh">0x630u</span><span class="tok-p">);</span>
 <span class="lineno"> 4</span>   <span class="tok-n">ctx_</span><span class="tok-o">-&gt;</span><span class="tok-n">v3</span> <span class="tok-o">=</span> <span class="tok-n">ctx_</span><span class="tok-o">-&gt;</span><span class="tok-n">v1</span><span class="tok-p">;</span> <span class="tok-cm">/* 0x8000 */</span>
@@ -3240,7 +3254,7 @@ and applying this definition to the <code>ctx</code> pointer:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>This code can be summarized as follow:</p>
+<p>This code can be summarized as follows:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -3251,7 +3265,7 @@ and applying this definition to the <code>ctx</code> pointer:</p>
 <p>the first byte of <code>atoi(argv[1])</code> is mixed to the first byte of the <code>ctx&#8594;str_2</code> string</p>
 </li>
 <li>
-<p>the function <code>sub_4014E0</code> is called with the following arguments: <code>res_120_xor = 73 22 F7 E5 E9 47 61 76  E6 D2 EB 86 FB EB DF 7E</code>, 16,
+<p>the function <code>sub_4014E0</code> (renamed <code>calc_rc5_key</code>) is called with the following arguments: <code>res_120_xor = 73 22 F7 E5 E9 47 61 76  E6 D2 EB 86 FB EB DF 7E</code>, 16,
 <code>ctx&#8594;str_2</code>, <code>v9 = 0</code>, <code>ctx&#8594;v3 = 0x8000</code> and a pointer to a buffer on the stack which is later used as an RC5 key</p>
 </li>
 <li>
@@ -3288,7 +3302,8 @@ clearly not the case:</p>
 <p><span class="image"><img src="images/level_11_011.png" alt="level_11_011"></span></p>
 </div>
 <div class="paragraph">
-<p>The function <code>sub_4014E0</code> seems to be used to derivate a RC5 key from the arguments. IDA manages to decompile this function cleanly:</p>
+<p>The function <code>sub_4014E0</code> seems to be used to derivate a RC5 key from the arguments. IDA manages to decompile this function in a clean
+manner:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3337,7 +3352,7 @@ with all the values from 0 to 255. Moreover, for each run, we need to tell if th
 </div>
 <div class="paragraph">
 <p>It may then be possible to patch the code to replace the increment with an invalid instruction. By doing so,
-only the right value will not result in crashing the program.</p>
+only the right value will not crash the program.</p>
 </div>
 <div class="paragraph">
 <p>By setting a breakpoint before executing this instruction and running the program, we can examine the status of the
@@ -3463,7 +3478,7 @@ a cleaner decompilation:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="c"><span class="tok-kt">int</span> <span class="tok-kr">__fastcall</span> <span class="tok-nf">sub_4015D0</span><span class="tok-p">(</span><span class="tok-kt">void</span> <span class="tok-o">*</span><span class="tok-n">ctx</span><span class="tok-p">,</span> <span class="tok-kt">int</span> <span class="tok-n">unused</span><span class="tok-p">,</span> <span class="tok-kt">char</span> <span class="tok-n">first_arg</span><span class="tok-p">,</span> <span class="tok-kt">void</span> <span class="tok-o">*</span><span class="tok-n">res_120_xor</span><span class="tok-p">,</span> <span class="tok-kt">int</span> <span class="tok-n">unused_1</span><span class="tok-p">,</span> <span class="tok-kt">void</span> <span class="tok-o">*</span><span class="tok-n">res_121_data</span><span class="tok-p">,</span> <span class="tok-kt">int</span> <span class="tok-n">unused_2</span><span class="tok-p">)</span>
+<pre class="pygments highlight"><code data-lang="c"><span class="tok-kt">int</span> <span class="tok-kr">__fastcall</span> <span class="tok-nf">decrypt_blocks</span><span class="tok-p">(</span><span class="tok-kt">void</span> <span class="tok-o">*</span><span class="tok-n">ctx</span><span class="tok-p">,</span> <span class="tok-kt">int</span> <span class="tok-n">unused</span><span class="tok-p">,</span> <span class="tok-kt">char</span> <span class="tok-n">first_arg</span><span class="tok-p">,</span> <span class="tok-kt">void</span> <span class="tok-o">*</span><span class="tok-n">res_120_xor</span><span class="tok-p">,</span> <span class="tok-kt">int</span> <span class="tok-n">unused_1</span><span class="tok-p">,</span> <span class="tok-kt">void</span> <span class="tok-o">*</span><span class="tok-n">res_121_data</span><span class="tok-p">,</span> <span class="tok-kt">int</span> <span class="tok-n">unused_2</span><span class="tok-p">)</span>
   <span class="tok-p">[...]</span>
 <span class="tok-nl">LABEL_11</span><span class="tok-p">:</span>
   <span class="tok-k">if</span> <span class="tok-p">(</span> <span class="tok-n">S_mem</span> <span class="tok-p">)</span>
@@ -3617,12 +3632,12 @@ being the number of HMAC-MD5 computed (<code>ctx&#8594;current_hmac_iter</code> 
 value is equal to <code>0x2000000</code>. Computing the key for the 11th block seems to take forever.</p>
 </div>
 <div class="paragraph">
-<p>As it seems that we have met a dead-end here, the next step is to analysis the function <code>sub_401CF0</code> that
+<p>As it seems that we have met a dead-end here, the next step is to analyze the function <code>write_secret</code> that
 was put aside before.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_function_sub_401cf0_write_secret_jpg">Function sub_401CF0 (write_secret_jpg)</h3>
+<h3 id="_function_write_secret">Function write_secret</h3>
 <div class="paragraph">
 <p>This function is called just after having decrypted all the blocks, as shown below:</p>
 </div>
@@ -3634,7 +3649,15 @@ was put aside before.</p>
 a static analysis can be attempted.</p>
 </div>
 <div class="paragraph">
-<p>The beginning of this function is decompiled as follow, in a simplified version without the error checking code:</p>
+<p>The callgraph of the function is shown below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/write_secret_l2.svg" alt="write secret l2" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>The beginning of this function is decompiled as follows, in a simplified version without the error checking code:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3660,7 +3683,7 @@ the data of resource 120. This index seems to be used to select a key from the d
 following result: <code>res_120_xor = 73 22 F7 E5 E9 47 61 76  E6 D2 EB 86 FB EB DF 7E</code>.</p>
 </div>
 <div class="paragraph">
-<p>The function <code>sub_401B60</code> starts by calculating some values: the <code>eax</code> register is equal to <code>res_120_xor[2] | 0x31000C01 = 0x86ebd2e6 | 0x31000C01 = 0xb7ebdee7</code>. Using
+<p>The function <code>sub_401B60</code> (renamed <code>calc_index</code>) starts by calculating some values: the <code>eax</code> register is equal to <code>res_120_xor[2] | 0x31000C01 = 0x86ebd2e6 | 0x31000C01 = 0xb7ebdee7</code>. Using
 a well-known <a href="https://yesteapea.wordpress.com/2013/03/03/counting-the-number-of-set-bits-in-an-integer/">technique</a>, the
 number of bits set in <code>eax</code> is computed, the result being 24. Using this result, the value of the field <code>ctx&#8594;current_hmac_iter</code> is shifted to the right: the
 function exits prematurely if the result is equal to 0.</p>
@@ -3712,7 +3735,7 @@ function exits prematurely if the result is equal to 0.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Similarly, a new condition is tested on <code>ctx&#8594;current_hmac_iter</code>. This time, when shifted to the right 26 times, the result must be zero.</p>
+<p>Similarly, a new condition is tested on <code>ctx&#8594;current_hmac_iter</code>. This time, when shifted to the right 26 times, the result must not be equal to zero.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/level_11_019.png" alt="level_11_019"></span></p>
@@ -3738,14 +3761,14 @@ which is 18. This value is divided by 2 and the resulting value 9 is returned.</
 <p><span class="image"><img src="images/level_11_020.png" alt="level_11_020"></span></p>
 </div>
 <div class="paragraph">
-<p>The first 9 blocks must be decrypted in order for the right index to be returned by <code>sub_401B60</code>. The file <code>CryptoGraph.exe</code> is
+<p>The first 9 blocks must be decrypted in order for the right index to be returned by <code>calc_index</code>. The file <code>CryptoGraph.exe</code> is
 patched once again, this time to change the limit of the number of blocks decrypted:</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/level_11_021.png" alt="level_11_021"></span></p>
 </div>
 <div class="paragraph">
-<p>Using OllyDbg, the result of the function <code>sub_401B60</code> can be confirmed:</p>
+<p>Using OllyDbg, the result of the function <code>calc_index</code> can be confirmed:</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/level_11_017.png" alt="level_11_017"></span></p>
@@ -3758,7 +3781,7 @@ patched once again, this time to change the limit of the number of blocks decryp
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="c">   <span class="tok-n">idx</span> <span class="tok-o">=</span> <span class="tok-n">sub_401B60</span><span class="tok-p">(</span><span class="tok-n">ctx_</span><span class="tok-p">,</span> <span class="tok-n">res_120_data_1</span><span class="tok-p">,</span> <span class="tok-n">res_120_size</span><span class="tok-p">);</span>
+<pre class="pygments highlight"><code data-lang="c">   <span class="tok-n">idx</span> <span class="tok-o">=</span> <span class="tok-n">calc_index</span><span class="tok-p">(</span><span class="tok-n">ctx_</span><span class="tok-p">,</span> <span class="tok-n">res_120_data_1</span><span class="tok-p">,</span> <span class="tok-n">res_120_size</span><span class="tok-p">);</span>
    <span class="tok-cm">/* Initialize a RC5 context using the key corresponding to the index */</span>
    <span class="tok-n">RC5_init</span><span class="tok-p">(</span><span class="tok-o">&amp;</span><span class="tok-n">rc5_ctx</span><span class="tok-p">,</span> <span class="tok-n">idx</span> <span class="tok-o">+</span> <span class="tok-mi">2</span> <span class="tok-o">*</span> <span class="tok-n">ctx_</span><span class="tok-o">-&gt;</span><span class="tok-n">rc5_rounds</span><span class="tok-p">,</span> <span class="tok-n">ctx_</span><span class="tok-o">-&gt;</span><span class="tok-n">blocks</span><span class="tok-p">[</span><span class="tok-n">idx</span><span class="tok-p">].</span><span class="tok-n">hmac_key</span><span class="tok-p">,</span> <span class="tok-mi">8u</span><span class="tok-p">);</span>
    <span class="tok-n">v26</span> <span class="tok-o">=</span> <span class="tok-mi">0</span><span class="tok-p">;</span>
@@ -3867,7 +3890,7 @@ write the <code>secret.jpg</code> file in the current directory.</p>
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2015-09-25 17:45:44 CEST
+Last updated 2015-10-04 13:57:09 CEST
 </div>
 </div>
 </body>
